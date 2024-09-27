@@ -1,55 +1,52 @@
 <?xml version="1.0"?>
 <flowgorithm fileversion="4.2">
     <attributes>
-        <attribute name="name" value="T01"/>
-        <attribute name="authors" value="adith"/>
+        <attribute name="name" value="T02"/>
+        <attribute name="authors" value="ASUS"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-09-27 11:20:23 AM"/>
-        <attribute name="created" value="YWRpdGg7TE9RTEFQVE9QOzIwMjQtMDktMDY7MTA6MDg6MTYgQU07MjQ5MA=="/>
-        <attribute name="edited" value="YWRpdGg7TE9RTEFQVE9QOzIwMjQtMDktMjc7MTE6MjA6MjMgQU07NDsyNTk3"/>
+        <attribute name="saved" value="2024-09-27 11:23:07 AM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtRjc4Q0hCNkc7MjAyNC0wOS0yNzsxMDozMzowNiBBTTsyNjA0"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtRjc4Q0hCNkc7MjAyNC0wOS0yNzsxMDo0MDo1NCBBTTsxO0FTVVM7TEFQVE9QLUY3OENIQjZHOzIwMjQtMDktMDY7MTA6MTA6NTYgQU07VDAxLmZwcmc7NjA5MA=="/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtRjc4Q0hCNkc7MjAyNC0wOS0yNzsxMDo0NDozMCBBTTsxOzI3MTE="/>
+        <attribute name="edited" value="YWRpdGg7TE9RTEFQVE9QOzIwMjQtMDktMjc7MTE6MjM6MDcgQU07MTsyNTk5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="ISBN, Judul, Penulis, Penerbit, FBE, Grade" type="String" array="False" size=""/>
-            <declare name="TT, Stok" type="Integer" array="False" size=""/>
-            <declare name="HP, MM, Rating" type="Real" array="False" size=""/>
+            <declare name="ISBN, Judul, Penulis, Penerbit, Format, Kategori" type="String" array="False" size=""/>
+            <declare name="Tahun, Stok" type="Integer" array="False" size=""/>
+            <declare name="Harga, Margin, Rating" type="Real" array="False" size=""/>
             <input variable="ISBN"/>
             <input variable="Judul"/>
             <input variable="Penulis"/>
-            <input variable="TT"/>
+            <input variable="Tahun"/>
             <input variable="Penerbit"/>
-            <input variable="FBE"/>
-            <input variable="HP"/>
-            <input variable="MM"/>
+            <input variable="Format"/>
+            <input variable="Harga"/>
+            <input variable="Margin"/>
             <input variable="Stok"/>
             <input variable="Rating"/>
             <if expression="Rating&gt;=4.7">
                 <then>
-                    <assign variable="Grade" expression="&quot;Best Pick&quot;"/>
+                    <assign variable="Kategori" expression="&quot;Best Pick&quot;"/>
                 </then>
                 <else>
                     <if expression="Rating&gt;=4.5 &amp;&amp; Rating&lt;4.7">
                         <then>
-                            <assign variable="Grade" expression="&quot;Must Read&quot;"/>
+                            <assign variable="Kategori" expression="&quot;Must Read&quot;"/>
                         </then>
                         <else>
                             <if expression="Rating&gt;=4.0 &amp;&amp; Rating&lt;4.5">
                                 <then>
-                                    <assign variable="Grade" expression="&quot;Recommended&quot;"/>
+                                    <assign variable="Kategori" expression="&quot;Recommended&quot;"/>
                                 </then>
                                 <else>
                                     <if expression="Rating&gt;=3.0 &amp;&amp; Rating&lt;4.0">
                                         <then>
-                                            <assign variable="Grade" expression="&quot;Average&quot;"/>
+                                            <assign variable="Kategori" expression="&quot;Average&quot;"/>
                                         </then>
                                         <else>
-                                            <if expression="Rating&lt;3.0">
-                                                <then>
-                                                    <assign variable="Grade" expression="&quot;Low&quot;"/>
-                                                </then>
-                                                <else/>
-                                            </if>
+                                            <assign variable="Kategori" expression="&quot;Low&quot;"/>
                                         </else>
                                     </if>
                                 </else>
@@ -58,7 +55,7 @@
                     </if>
                 </else>
             </if>
-            <output expression="ISBN&amp;&quot;|&quot;&amp;Judul&amp;&quot;|&quot;&amp;Penulis&amp;&quot;|&quot;&amp;TT&amp;&quot;|&quot;&amp;Penerbit&amp;&quot;|&quot;&amp;FBE&amp;&quot;|&quot;&amp;HP&amp;&quot;|&quot;&amp;MM&amp;&quot;|&quot;&amp;Stok&amp;&quot;|&quot;&amp;Rating&amp;&quot;|&quot;&amp;Grade" newline="True"/>
+            <output expression="ISBN&amp;&quot;|&quot;&amp;Judul&amp;&quot;|&quot;&amp;Penulis&amp;&quot;|&quot;&amp;Tahun&amp;&quot;|&quot;&amp;Penerbit&amp;&quot;|&quot;&amp;Format&amp;&quot;|&quot;&amp;Harga&amp;&quot;|&quot;&amp;Margin&amp;&quot;|&quot;&amp;Stok&amp;&quot;|&quot;&amp;tofixed(Rating,1)&amp;&quot;|&quot;&amp;Kategori" newline="True"/>
         </body>
     </function>
 </flowgorithm>
