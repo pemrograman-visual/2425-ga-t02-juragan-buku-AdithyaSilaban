@@ -44,4 +44,3 @@ public class JavaApplication {
         System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tT + "|" + penerbit + "|" + fBE + "|" + hP + "|" + mM + "|" + stok + "|" + rating + "|" + grade);
     }
 }
-
