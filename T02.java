@@ -1,6 +1,5 @@
 // 12S24029 - ADITHYA PHILIP JONA PUTRA SILABAN
 // 12S24048 - OLIVIA TAMBUNAN
-
 import java.util.*;
 import java.lang.Math;
 
@@ -15,13 +14,13 @@ public class T02 {
         iSBN = input.nextLine();
         judul = input.nextLine();
         penulis = input.nextLine();
-        tT = input.nextInt();
+        tT = Integer.parseInt(input.nextLine());
         penerbit = input.nextLine();
         fBE = input.nextLine();
-        hP = input.nextDouble();
-        mM = input.nextDouble();
-        stok = input.nextInt();
-        rating = input.nextDouble();
+        hP = Double.parseDouble(input.nextLine());
+        mM = Double.parseDouble(input.nextLine());
+        stok = Integer.parseInt(input.nextLine());
+        rating = Double.parseDouble(input.nextLine());
         if (rating >= 4.7) {
             grade = "Best Pick";
         } else {
