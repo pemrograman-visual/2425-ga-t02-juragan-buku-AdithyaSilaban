@@ -4,7 +4,7 @@
 import java.util.*;
 import java.lang.Math;
 
-public class JavaApplication {
+public class T02 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -15,13 +15,13 @@ public class JavaApplication {
         iSBN = input.nextLine();
         judul = input.nextLine();
         penulis = input.nextLine();
-        tT = Integer.parseInt(input.nextLine());
+        tT = input.nextInt();
         penerbit = input.nextLine();
         fBE = input.nextLine();
-        hP = Double.parseDouble(input.nextLine());
-        mM = Double.parseDouble(input.nextLine());
-        stok = Integer.parseInt(input.nextLine());
-        rating = Double.parseDouble(input.nextLine());
+        hP = input.nextDouble();
+        mM = input.nextDouble();
+        stok = input.nextInt();
+        rating = input.nextDouble();
         if (rating >= 4.7) {
             grade = "Best Pick";
         } else {
